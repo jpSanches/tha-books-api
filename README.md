@@ -29,7 +29,36 @@ A simple **FastAPI** backend application for managing a books database. This pro
 
 ---
 
+## 📁 Project Structure
 
+```
+books_api/
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── core/
+│   │   └── __init__.py
+│   ├── db/
+│   │   └── __init__.py
+│   ├── schemas/
+│   │   └── __init__.py
+│   ├── crud/
+│   │   └── __init__.py
+│   ├── api/
+│   │   └── v1/
+│   │       └── routes/
+│   │           └── __init__.py
+│   ├── services/
+│   │   └── __init__.py
+│   └── utils/
+│       └── __init__.py
+├── books.db
+├── requirements.txt
+├── Procfile
+└── .gitignore
+```
+
+---
 ## 🚀 Getting Started
 
 ### 📥 Installation
