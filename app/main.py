@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
 
-from app.api.v1.routes import auth, books
+from app.api.v1.routes import auth, books, health
 from app.db.database import init_db
 from app.core.exception_handlers import global_exception_handler
 
@@ -12,8 +12,25 @@ async def lifespan(_: FastAPI):
     yield
 
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(
+    title="Books API",
+    description="API for managing books in a SQLite database.",
+    version="v0.0.1",
+    lifespan=lifespan,
+    openapi_tags=[
+        {"name": "Health", "description": "Health checker. Useful for liveness probe."},
+        {
+            "name": "Books",
+            "description": "CRUD operations for books.",
+        },
+        {
+            "name": "Auth",
+            "description": "Authentication to access secured endpoints.",
+        },
+    ],
+)
 app.add_exception_handler(Exception, global_exception_handler)
+app.include_router(health.router)
 app.include_router(books.router)
 app.include_router(auth.router)
 
