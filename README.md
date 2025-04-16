@@ -57,7 +57,7 @@ A simple **FastAPI** backend application for managing a books database. This pro
 ---
 ## 🚀 Getting Started
 
-### 📥 Installation
+### 📥 Installation for Development
 
 1. **Clone the repo**:
    ```bash
@@ -83,8 +83,9 @@ A simple **FastAPI** backend application for managing a books database. This pro
 
 Use the `/login` endpoint to obtain a **JWT token**.
 
-- **Username**: `admin`
-- **Password**: `admin`
+- **Username**: defined by env var `ADMIN_USERNAME`.
+- **Password**: defined by env var `ADMIN_PASSWORD`.
+- **Encryption key**: defined by env var `SECRET_KEY`.
 
 Once authenticated, use the token in the `Authorization` header:
 
@@ -92,7 +93,7 @@ Once authenticated, use the token in the `Authorization` header:
 Authorization: Bearer <your_token>
 ```
 
-All `/books/*` endpoints require this token.
+All `/books/*` and SSE endpoints require this token.
 
 ---
 
