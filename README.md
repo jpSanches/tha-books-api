@@ -32,30 +32,26 @@ A simple **FastAPI** backend application for managing a books database. This pro
 ## 📁 Project Structure
 
 ```
-books_api/
-├── app/
-│   ├── __init__.py
-│   ├── main.py
-│   ├── core/
-│   │   └── __init__.py
-│   ├── db/
-│   │   └── __init__.py
-│   ├── schemas/
-│   │   └── __init__.py
-│   ├── crud/
-│   │   └── __init__.py
-│   ├── api/
-│   │   └── v1/
-│   │       └── routes/
-│   │           └── __init__.py
-│   ├── services/
-│   │   └── __init__.py
-│   └── utils/
-│       └── __init__.py
+.
+├── app
+│   ├── api
+│   │   └── v1
+│   │       └── routes
+│   ├── core
+│   ├── crud
+│   ├── db
+│   ├── main.py
+│   ├── schemas
+│   └── utils
 ├── books.db
-├── requirements.txt
+├── LICENSE
 ├── Procfile
-└── .gitignore
+├── pyproject.toml
+├── pytest.ini
+├── README.md
+├── requirements.txt
+├── runtime.txt
+└── tests
 ```
 
 ---
